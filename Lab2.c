@@ -83,22 +83,27 @@ int main(void)
     int a[] = {2, 5, 0, 4, -1, 7};
     int b[] = {5, 5, 5, 5, 5, 5, 5, 5};
     int c[] = {2};
+    int d[] = {1, 2, 3, 4, 4, 6, 8};
 
     CHECK(arr_min(a, sizeof(a) / sizeof(int)) == -1);
     CHECK(arr_min(b, sizeof(b) / sizeof(int)) == 5);
     CHECK(arr_min(c, sizeof(c) / sizeof(int)) == 2);
+    CHECK(arr_min(d, sizeof(d) / sizeof(int)) == 1);
 
     CHECK(arr_count(a, sizeof(a) / sizeof(int), 1) == 0);
     CHECK(arr_count(b, sizeof(b) / sizeof(int), 5) == sizeof(b) / sizeof(int));
     CHECK(arr_count(c, sizeof(c) / sizeof(int), 2) == 1);
+    CHECK(arr_count(d, sizeof(d) / sizeof(int), 4) == 2);
 
     CHECK(arr_all_even(a, sizeof(a) / sizeof(int)) == 0);
     CHECK(arr_all_even(b, sizeof(b) / sizeof(int)) == 0);
     CHECK(arr_all_even(c, sizeof(c) / sizeof(int)) == 1);
+    CHECK(arr_all_even(d, sizeof(d) / sizeof(int)) == 0);
 
     CHECK(arr_find_last(a, sizeof(a) / sizeof(int), 5) == 1);
     CHECK(arr_find_last(b, sizeof(b) / sizeof(int), 5) == 7);
     CHECK(arr_find_last(c, sizeof(c) / sizeof(int), 5) == (size_t)-1);
+    CHECK(arr_find_last(d, sizeof(d) / sizeof(int), 4) == 4);
 
     return 0;
 }
